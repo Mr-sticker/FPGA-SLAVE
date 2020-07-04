@@ -1,0 +1,222 @@
+/* 
+ * --------------------
+ * Company	:gingko
+ * BBS		:http://www.eeschool.org
+ * --------------------
+ * 
+ * --------------------
+ */
+//------------------------------------------------//
+//spi_memory:根据RAM读写时序实现spi数据存储
+module spi_memory(
+	input clk_25m,
+	input rst_n,
+	
+	input pll_150m,
+	input spi_cs,
+	input spi_tx_en,//spi发送数据时的字节数据读取时钟
+	input spi_rx_en,//spi接收数据时的字节数据写入时钟
+	input [7:0]receive_byte,
+	output [7:0]send_byte,
+	
+	input cs_start,
+	input cs_end,
+	input cs_delay,
+
+	output error
+);
+//------------------------------------------------//
+//接收状态机
+reg [7:0]rx_state;
+reg [7:0]order;
+
+reg [15:0]wr_length_r = 16'd0;
+reg [15:0]wr_address_r = 16'd0;
+reg [15:0]rd_address_r = 16'd0;
+
+reg wr_en_r;
+reg rd_en_r;
+
+reg error_r;
+
+always@(posedge spi_rx_en or negedge rst_n or posedge spi_cs)
+	begin
+		if((!rst_n)||(spi_cs))
+			begin
+				rx_state <= 8'hff;
+				wr_en_r <= 1'd0;
+				rd_en_r <= 1'd0;
+//				order <= 8'd0;
+			end
+		else
+			begin
+				case(rx_state)
+					8'hff:begin
+						rx_state <= 8'h00;
+					end
+					8'h00:begin//byte1
+						order <= receive_byte;
+						case(receive_byte)							
+							8'h02:begin
+								rx_state <= 8'h02;
+							end
+							8'h04:begin
+								rx_state <= 8'h04;
+							end
+							8'h07:begin
+								rx_state <= 8'h08;
+							end
+							default:;
+						endcase
+					end
+					8'h02:begin
+						wr_length_r[15:8] <= receive_byte;
+						rx_state <= rx_state + 1'd1;
+					end
+					8'h03:begin
+						wr_length_r <= {wr_length_r[15:8],receive_byte};
+					end		
+					
+					8'h04:begin
+						wr_address_r[15:8] <= receive_byte;
+						rx_state <= rx_state + 1'd1;
+					end
+					8'h05:begin
+						wr_address_r <= {wr_address_r[15:8],receive_byte};
+						rx_state <= rx_state + 1'd1;
+						wr_en_r <= 1'd1;
+					end	
+					8'h06:begin
+						if(wr_address_r==12'h3ff)
+							begin
+								wr_address_r <= 12'h00;
+								rx_state <= rx_state + 1'd1;
+								wr_en_r <= 1'd0;
+							end
+						else
+							begin
+								wr_address_r <= wr_address_r + 1'd1;
+							end						
+					end
+					
+					8'h08:begin
+						rd_address_r[15:8] <= receive_byte;
+						rx_state <= rx_state + 1'd1;
+					end
+					8'h09:begin
+						rd_address_r <= {rd_address_r[15:8],receive_byte};
+						rx_state <= rx_state + 1'd1;
+						rd_en_r <= 1'd1;
+					end
+					8'h0a:begin
+						rd_address_r <= rd_address_r + 1'd1;
+					end
+					default:;
+				endcase
+			end
+	end
+	
+assign error = error_r;
+//------------------------------------------------//
+always@(posedge cs_end or negedge rst_n)
+	begin
+		if(!rst_n)
+			begin
+				error_r <= 1'd0;
+			end
+		else
+			begin
+				if(order==8'h04)
+					begin
+						if(receive_byte==crc_out)
+							begin
+								error_r <= 1'd0;
+							end
+						else
+							begin
+								error_r <= 1'd1;
+							end
+					end
+				else
+					begin
+						error_r <= error_r;
+					end
+			end	
+	end
+//------------------------------------------------//
+//crc_d8:对spi数据进行校验
+crc_d8 u1(
+	.data_in(receive_byte),
+	.crc_en(1'd1),
+	.crc_out(crc_out),
+	.rst(spi_cs),
+	.clk(spi_rx_en)
+);
+
+wire [7:0]crc_out;
+//------------------------------------------------//
+//发送状态机
+reg [7:0]tx_state;
+reg [7:0]send_byte_r;
+
+always@(posedge spi_tx_en or negedge rst_n or posedge spi_cs)
+	begin
+		if((!rst_n)||(spi_cs))
+			begin
+				tx_state <= 8'h00;
+				send_byte_r <= 8'h00; 
+			end
+		else
+			begin
+				case(tx_state)
+					8'h00:begin
+						tx_state <= tx_state + 1'd1;
+					end
+					8'h01:begin
+						case(receive_byte)
+							8'h01:begin//器件ID
+								send_byte_r <= 8'h00;
+								tx_state <= 8'h02;
+							end
+							8'h08:begin//通信错误标志
+								send_byte_r <= 8'h00;
+								tx_state <= 8'h03;
+							end
+							default:;						
+						endcase
+					end
+					8'h02:begin//器件ID
+						send_byte_r <= 8'h01;
+					end
+					8'h03:begin//器件ID
+						send_byte_r <= {7'd0,error_r};
+					end
+					default:;
+				endcase
+			end
+	end
+//------------------------------------------------//
+//spi_ram
+spi_ram u0(	
+	.wrclock(spi_rx_en),
+	.wren(wr_en),
+	.wraddress(wr_address),
+	.data(receive_byte),
+	
+	.rdclock(spi_tx_en),
+	.rden(rd_en),	
+	.rdaddress(rd_address),
+	.q(data_out)
+);
+wire [7:0]data_out;
+
+wire wr_en = wr_en_r;
+wire [11:0]wr_address = wr_address_r;
+
+wire rd_en = rd_en_r;
+wire [11:0]rd_address = rd_address_r;
+
+assign send_byte = (order==8'h01) ? send_byte_r : 8'hzz;
+assign send_byte = (order==8'h07) ? data_out : 8'hzz;
+//------------------------------------------------//
+endmodule

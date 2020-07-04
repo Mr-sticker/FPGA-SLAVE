@@ -1,0 +1,365 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'spi_ctrl:u2|spi_rx_en_r'
+Slack : -5.773
+TNS   : -336.569
+
+Type  : Slow 1200mV 85C Model Setup 'spi_clk'
+Slack : -5.771
+TNS   : -68.820
+
+Type  : Slow 1200mV 85C Model Setup 'clk_25m'
+Slack : -5.598
+TNS   : -186.219
+
+Type  : Slow 1200mV 85C Model Setup 'spi_ctrl:u2|cs_start1'
+Slack : -4.709
+TNS   : -4.709
+
+Type  : Slow 1200mV 85C Model Setup 'spi_ctrl:u2|spi_tx_en_r'
+Slack : -2.152
+TNS   : -10.269
+
+Type  : Slow 1200mV 85C Model Setup 'led_ctrl:u1|time_cnt[0]'
+Slack : 0.114
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'spi_ctrl:u2|spi_tx_en_r'
+Slack : 0.187
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'spi_ctrl:u2|spi_rx_en_r'
+Slack : 0.450
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'spi_clk'
+Slack : 0.453
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'spi_ctrl:u2|cs_start1'
+Slack : 0.485
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'led_ctrl:u1|time_cnt[0]'
+Slack : 0.497
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'clk_25m'
+Slack : 0.708
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'spi_ctrl:u2|cs_start1'
+Slack : -3.678
+TNS   : -3.678
+
+Type  : Slow 1200mV 85C Model Recovery 'spi_clk'
+Slack : -3.122
+TNS   : -85.433
+
+Type  : Slow 1200mV 85C Model Recovery 'clk_25m'
+Slack : -2.894
+TNS   : -94.102
+
+Type  : Slow 1200mV 85C Model Recovery 'spi_ctrl:u2|spi_rx_en_r'
+Slack : -2.173
+TNS   : -66.384
+
+Type  : Slow 1200mV 85C Model Recovery 'led_ctrl:u1|time_cnt[0]'
+Slack : -1.670
+TNS   : -1.670
+
+Type  : Slow 1200mV 85C Model Recovery 'spi_ctrl:u2|spi_tx_en_r'
+Slack : -1.217
+TNS   : -6.085
+
+Type  : Slow 1200mV 85C Model Removal 'spi_ctrl:u2|spi_tx_en_r'
+Slack : 0.912
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'led_ctrl:u1|time_cnt[0]'
+Slack : 1.334
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'spi_ctrl:u2|spi_rx_en_r'
+Slack : 1.352
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'spi_clk'
+Slack : 1.868
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'clk_25m'
+Slack : 1.891
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'spi_ctrl:u2|cs_start1'
+Slack : 3.475
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'spi_ctrl:u2|spi_rx_en_r'
+Slack : -3.201
+TNS   : -153.842
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'spi_ctrl:u2|spi_tx_en_r'
+Slack : -3.201
+TNS   : -15.324
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk_25m'
+Slack : -3.000
+TNS   : -65.454
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'spi_clk'
+Slack : -3.000
+TNS   : -50.584
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'led_ctrl:u1|time_cnt[0]'
+Slack : -1.487
+TNS   : -1.487
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'spi_ctrl:u2|cs_start1'
+Slack : -1.487
+TNS   : -1.487
+
+Type  : Slow 1200mV 0C Model Setup 'spi_clk'
+Slack : -5.381
+TNS   : -62.838
+
+Type  : Slow 1200mV 0C Model Setup 'spi_ctrl:u2|spi_rx_en_r'
+Slack : -5.345
+TNS   : -307.323
+
+Type  : Slow 1200mV 0C Model Setup 'clk_25m'
+Slack : -5.317
+TNS   : -174.858
+
+Type  : Slow 1200mV 0C Model Setup 'spi_ctrl:u2|cs_start1'
+Slack : -4.416
+TNS   : -4.416
+
+Type  : Slow 1200mV 0C Model Setup 'spi_ctrl:u2|spi_tx_en_r'
+Slack : -1.910
+TNS   : -8.877
+
+Type  : Slow 1200mV 0C Model Setup 'led_ctrl:u1|time_cnt[0]'
+Slack : 0.208
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'spi_ctrl:u2|spi_tx_en_r'
+Slack : 0.089
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'spi_clk'
+Slack : 0.401
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'spi_ctrl:u2|spi_rx_en_r'
+Slack : 0.401
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'spi_ctrl:u2|cs_start1'
+Slack : 0.430
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'led_ctrl:u1|time_cnt[0]'
+Slack : 0.445
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'clk_25m'
+Slack : 0.637
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'spi_ctrl:u2|cs_start1'
+Slack : -3.324
+TNS   : -3.324
+
+Type  : Slow 1200mV 0C Model Recovery 'spi_clk'
+Slack : -2.862
+TNS   : -77.252
+
+Type  : Slow 1200mV 0C Model Recovery 'clk_25m'
+Slack : -2.587
+TNS   : -83.985
+
+Type  : Slow 1200mV 0C Model Recovery 'spi_ctrl:u2|spi_rx_en_r'
+Slack : -1.885
+TNS   : -56.992
+
+Type  : Slow 1200mV 0C Model Recovery 'led_ctrl:u1|time_cnt[0]'
+Slack : -1.379
+TNS   : -1.379
+
+Type  : Slow 1200mV 0C Model Recovery 'spi_ctrl:u2|spi_tx_en_r'
+Slack : -0.960
+TNS   : -4.800
+
+Type  : Slow 1200mV 0C Model Removal 'spi_ctrl:u2|spi_tx_en_r'
+Slack : 0.746
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'led_ctrl:u1|time_cnt[0]'
+Slack : 1.109
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'spi_ctrl:u2|spi_rx_en_r'
+Slack : 1.157
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'spi_clk'
+Slack : 1.691
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'clk_25m'
+Slack : 1.739
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'spi_ctrl:u2|cs_start1'
+Slack : 3.208
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'spi_ctrl:u2|spi_rx_en_r'
+Slack : -3.201
+TNS   : -153.842
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'spi_ctrl:u2|spi_tx_en_r'
+Slack : -3.201
+TNS   : -15.382
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk_25m'
+Slack : -3.000
+TNS   : -65.454
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'spi_clk'
+Slack : -3.000
+TNS   : -50.584
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'led_ctrl:u1|time_cnt[0]'
+Slack : -1.487
+TNS   : -1.487
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'spi_ctrl:u2|cs_start1'
+Slack : -1.487
+TNS   : -1.487
+
+Type  : Fast 1200mV 0C Model Setup 'clk_25m'
+Slack : -1.898
+TNS   : -59.499
+
+Type  : Fast 1200mV 0C Model Setup 'spi_ctrl:u2|spi_rx_en_r'
+Slack : -1.881
+TNS   : -91.552
+
+Type  : Fast 1200mV 0C Model Setup 'spi_ctrl:u2|cs_start1'
+Slack : -1.768
+TNS   : -1.768
+
+Type  : Fast 1200mV 0C Model Setup 'spi_clk'
+Slack : -1.558
+TNS   : -14.183
+
+Type  : Fast 1200mV 0C Model Setup 'spi_ctrl:u2|spi_tx_en_r'
+Slack : -0.414
+TNS   : -0.937
+
+Type  : Fast 1200mV 0C Model Setup 'led_ctrl:u1|time_cnt[0]'
+Slack : 0.626
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'spi_ctrl:u2|spi_rx_en_r'
+Slack : 0.156
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'spi_ctrl:u2|spi_tx_en_r'
+Slack : 0.167
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'spi_clk'
+Slack : 0.185
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'spi_ctrl:u2|cs_start1'
+Slack : 0.201
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'led_ctrl:u1|time_cnt[0]'
+Slack : 0.208
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clk_25m'
+Slack : 0.274
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'spi_ctrl:u2|cs_start1'
+Slack : -1.408
+TNS   : -1.408
+
+Type  : Fast 1200mV 0C Model Recovery 'spi_clk'
+Slack : -0.755
+TNS   : -20.313
+
+Type  : Fast 1200mV 0C Model Recovery 'clk_25m'
+Slack : -0.736
+TNS   : -22.853
+
+Type  : Fast 1200mV 0C Model Recovery 'spi_ctrl:u2|spi_rx_en_r'
+Slack : -0.506
+TNS   : -13.360
+
+Type  : Fast 1200mV 0C Model Recovery 'led_ctrl:u1|time_cnt[0]'
+Slack : -0.327
+TNS   : -0.327
+
+Type  : Fast 1200mV 0C Model Recovery 'spi_ctrl:u2|spi_tx_en_r'
+Slack : -0.066
+TNS   : -0.330
+
+Type  : Fast 1200mV 0C Model Removal 'spi_ctrl:u2|spi_tx_en_r'
+Slack : 0.466
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'spi_ctrl:u2|spi_rx_en_r'
+Slack : 0.646
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'led_ctrl:u1|time_cnt[0]'
+Slack : 0.753
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'clk_25m'
+Slack : 0.817
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'spi_clk'
+Slack : 0.830
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'spi_ctrl:u2|cs_start1'
+Slack : 1.865
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk_25m'
+Slack : -3.000
+TNS   : -46.057
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'spi_clk'
+Slack : -3.000
+TNS   : -37.694
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'spi_ctrl:u2|spi_rx_en_r'
+Slack : -1.000
+TNS   : -100.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'spi_ctrl:u2|spi_tx_en_r'
+Slack : -1.000
+TNS   : -8.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'led_ctrl:u1|time_cnt[0]'
+Slack : -1.000
+TNS   : -1.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'spi_ctrl:u2|cs_start1'
+Slack : -1.000
+TNS   : -1.000
+
+------------------------------------------------------------

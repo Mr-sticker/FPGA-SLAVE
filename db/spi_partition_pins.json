@@ -1,0 +1,33 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "spi_miso",
+					"strict" : false
+				},
+				{
+					"name" : "fpga_led",
+					"strict" : false
+				},
+				{
+					"name" : "spi_cs",
+					"strict" : false
+				},
+				{
+					"name" : "spi_clk",
+					"strict" : false
+				},
+				{
+					"name" : "clk_25m",
+					"strict" : false
+				},
+				{
+					"name" : "spi_mosi",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

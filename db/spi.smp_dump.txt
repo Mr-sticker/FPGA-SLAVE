@@ -1,0 +1,16 @@
+
+State Machine - |spi|spi_memory:u3|tx_state
+Name tx_state.tx_judge_state tx_state.tx_error_state tx_state.tx_device_state tx_state.tx_idle_state 
+tx_state.tx_idle_state 0 0 0 0 
+tx_state.tx_device_state 0 0 1 1 
+tx_state.tx_error_state 0 1 0 1 
+tx_state.tx_judge_state 1 0 0 1 
+
+State Machine - |spi|spi_memory:u3|rx_state
+Name rx_state.rx_judge_state rx_state.rx_rd_add_state rx_state.rx_rd_ledgth_state rx_state.rx_wr_add_state rx_state.rx_wr_length_state rx_state.rx_idle_state 
+rx_state.rx_idle_state 0 0 0 0 0 0 
+rx_state.rx_wr_length_state 0 0 0 0 1 1 
+rx_state.rx_wr_add_state 0 0 0 1 0 1 
+rx_state.rx_rd_ledgth_state 0 0 1 0 0 1 
+rx_state.rx_rd_add_state 0 1 0 0 0 1 
+rx_state.rx_judge_state 1 0 0 0 0 1 
